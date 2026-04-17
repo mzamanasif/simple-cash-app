@@ -57,7 +57,7 @@
       <div class="grid grid-cols-3 gap-3 p-3">
         <div
           id="add-button"
-          class="w-[130px] h-[90px] border-2 border-gray-300 text-center p-3 rounded-xl"
+          class="w-[130px] h-[90px] form-btn border-2 border-gray-300 text-center p-3 rounded-xl"
         >
           <img class="mx-auto" src="./assets/wallet1.png" alt="" />
           <h2>Add Money</h2>
@@ -65,35 +65,39 @@
 
         <div
           id="cash-out-button"
-          class="w-[130px] h-[90px] border-2 border-gray-300 text-center p-3 rounded-xl"
+          class="w-[130px] h-[90px] form-btn border-2 border-gray-300 text-center p-3 rounded-xl"
         >
           <img class="mx-auto" src="./assets/send1.png" alt="" />
           <h2>Cash Out</h2>
         </div>
 
         <div
-          class="w-[130px] h-[90px] border-2 border-gray-300 text-center p-3 rounded-xl"
+          id="transfer-button"
+          class="w-[130px] h-[90px] form-btn border-2 border-gray-300 text-center p-3 rounded-xl"
         >
           <img class="mx-auto" src="./assets/money1.png" alt="" />
           <h2>Transfer Money</h2>
         </div>
 
         <div
-          class="w-[130px] h-[90px] border-2 border-gray-300 text-center p-3 rounded-xl"
+          id="get-bonus-button"
+          class="w-[130px] h-[90px] form-btn border-2 border-gray-300 text-center p-3 rounded-xl"
         >
           <img class="mx-auto" src="./assets/bonus1.png" alt="" />
           <h2>Get Bonus</h2>
         </div>
 
         <div
-          class="w-[130px] h-[90px] border-2 border-gray-300 text-center p-3 rounded-xl"
+          id="pay-bill-button"
+          class="w-[130px] h-[90px] form-btn border-2 border-gray-300 text-center p-3 rounded-xl"
         >
           <img class="mx-auto" src="./assets/purse1.png" alt="" />
           <h2>Pay Bill</h2>
         </div>
 
         <div
-          class="w-[130px] h-[90px] border-2 border-gray-300 text-center p-3 rounded-xl"
+          id="transaction-button"
+          class="w-[130px] h-[90px] form-btn border-2 border-gray-300 text-center p-3 rounded-xl"
         >
           <img class="mx-auto" src="./assets/transaction1.png" alt="" />
           <h2>Transactions</h2>
@@ -102,10 +106,10 @@
     </div>
 
     <!-- all from section -->
-    <div class="max-w-lg mx-auto">
+    <div class="all-from-section max-w-lg mx-auto">
       <!-- add money form start -->
-      <div id="add-money-parent">
-        <h1 class="my-5 font-bold">Add Money</h1>
+      <div class="form" id="add-money-parent">
+        <h1 class="my-5 text-[1.25rem] font-bold">Add Money</h1>
         <form action="" class="bg-white rounded-2xl p-8">
           <div>
             <label class="font-semibold" for="">Select A Bank</label> <br />
@@ -159,8 +163,8 @@
       </div>
 
       <!-- cash out form -->
-      <div id="cash-out-parent" style="display: none">
-        <h1 class="my-5 font-bold">Cash Out</h1>
+      <div class="form" id="cash-out-parent" style="display: none">
+        <h1 class="my-5 text-[1.25rem] font-bold">Cash Out</h1>
         <form action="" class="bg-white rounded-2xl p-8">
           <div>
             <label class="font-semibold" for="">Agent Number</label>
@@ -196,6 +200,125 @@
             Withdraw Money
           </button>
         </form>
+      </div>
+
+      <!-- transfer money -->
+      <div class="form" id="transfer-money-parent" style="display: none">
+        <h1 class="my-5 text-[1.25rem] font-bold">Transfer Money</h1>
+        <form action="" class="bg-white rounded-2xl p-8">
+          <div>
+            <label class="font-semibold" for="">User Account Number</label>
+            <br />
+            <input
+              type="text"
+              placeholder="Enter 11 digit number"
+              class="input w-full bg-[#f4f5f7] my-3 rounded-3xl"
+            />
+          </div>
+          <div>
+            <label class="font-semibold" for="">Amount</label> <br />
+            <input
+              id="withdraw-amount"
+              type="text"
+              placeholder="Enter amount to transfer"
+              class="input w-full bg-[#f4f5f7] my-3 rounded-3xl"
+            />
+          </div>
+          <div>
+            <label class="font-semibold" for="">Pin Number</label> <br />
+            <input
+              type="text"
+              placeholder="Enter 4 digit pin number"
+              class="input w-full bg-[#f4f5f7] my-3 rounded-3xl"
+            />
+          </div>
+
+          <button
+            id="withdraw-button"
+            class="btn bg-[#0874F2] text-white font-semibold mt-5 w-full rounded-3xl"
+          >
+            Send Now
+          </button>
+        </form>
+      </div>
+
+      <!-- Get Bonus -->
+      <div class="form" id="get-bonus-parent" style="display: none">
+        <h1 class="my-5 text-[1.25rem] font-bold">Get Bonus</h1>
+        <form action="" class="bg-white rounded-2xl p-8">
+          <div>
+            <label class="font-semibold" for="">Enter Bonus Coupon</label>
+            <br />
+            <input
+              type="text"
+              placeholder="Enter your coupon"
+              class="input w-full bg-[#f4f5f7] my-3 rounded-3xl"
+            />
+          </div>
+
+          <button
+            id="withdraw-button"
+            class="btn bg-[#0874F2] text-white font-semibold mt-5 w-full rounded-3xl"
+          >
+            Get Bonus
+          </button>
+        </form>
+      </div>
+
+      <!-- pay bill -->
+      <div class="form" id="pay-bill-parent" style="display: none">
+        <h1 class="my-5 text-[1.25rem] font-bold">Pay Bill</h1>
+        <form action="" class="bg-white rounded-2xl p-8">
+          <div>
+            <label class="font-semibold" for="">Select To Pay</label> <br />
+            <select class="select w-full bg-[#f4f5f7] my-3 rounded-3xl">
+              <option>Select back</option>
+              <option>AB Bank</option>
+              <option>Brake Bank</option>
+              <option>Dutch Bangla Bank</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="font-semibold" for="">Biller Account Number</label>
+            <br />
+            <input
+              type="text"
+              placeholder="Enter account number"
+              class="input w-full bg-[#f4f5f7] my-3 rounded-3xl"
+            />
+          </div>
+          <div>
+            <label class="font-semibold" for="">Amount to Pay</label> <br />
+            <input
+              type="text"
+              placeholder="Add Amount to pay"
+              class="input w-full bg-[#f4f5f7] my-3 rounded-3xl"
+            />
+          </div>
+          <div>
+            <label class="font-semibold" for="">Pin Number</label> <br />
+            <input
+              type="text"
+              placeholder="Enter 4 digit pin number"
+              class="input w-full bg-[#f4f5f7] my-3 rounded-3xl"
+            />
+          </div>
+
+          <button
+            class="btn bg-[#0874F2] text-white font-semibold mt-5 w-full rounded-3xl"
+          >
+            Pay Now
+          </button>
+        </form>
+      </div>
+
+      <!-- Transaction-->
+      <div class="form" id="transaction-parent" style="display: none">
+        <div class="flex justify-between items-center">
+          <h1 class="my-5 text-[1.25rem] font-bold">Transaction History</h1>
+          <p class="text-[#08080880]">View All</p>
+        </div>
       </div>
     </div>
 
