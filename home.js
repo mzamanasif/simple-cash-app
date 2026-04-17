@@ -1,5 +1,7 @@
 const validPin = 1234;
 
+const transactionData = [];
+
 // function to get input value convert with number
 function getInputValueNumber(id) {
     const inputField = parseInt(document.getElementById(id).value);
@@ -72,6 +74,12 @@ document.getElementById('add-money-btn')
         const totalNewAvailableBalance = addAmount + availableBalance;
 
         setInnerText(totalNewAvailableBalance);
+        const data = {
+            name: "Add Money",
+            date: new Date().toLocaleTimeString()
+        }
+
+        transactionData.push(data);
 
     })
 
@@ -84,8 +92,42 @@ document.getElementById('withdraw-button')
         const totalNewAvailableBalance = availableBalance - withdrawAmount;
 
         setInnerText(totalNewAvailableBalance);
+        const data = {
+            name: "Cash Out",
+            date: new Date().toLocaleTimeString()
+        }
+
+        transactionData.push(data);
+        
     })
 
+//transaction section
+document.getElementById('transaction-button')
+    .addEventListener('click', function () {
+        const transactionContainer = document.getElementById('transaction-container')
+        transactionContainer.innerText = ""
+
+        for (const data of transactionData) {
+            const div = document.createElement("div")
+            div.innerHTML = `
+            <div
+            class="flex justify-between items-center bg-white rounded-xl mt-3 p-3"
+          >
+            <div class="flex items-center">
+              <div class="rounded-full bg-[#f4f5f7] p-3">
+                <img src="./assets/wallet1.png" alt="" />
+              </div>
+              <div class="ml-3">
+                <h1>${data.name}</h1>
+                <p>${data.date}</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+            `
+          transactionContainer.appendChild(div);  
+        }
+    })
 
 
 // toggling feature
